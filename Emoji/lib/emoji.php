@@ -57,9 +57,8 @@ class mbsEmoji{
 	}
 
 	public static function using($text){
-		foreach(mbsEmoji::$smiles as $smile => $img){
+		foreach(mbsEmoji::$smiles as $smile => $img)
 			$text = str_replace($smile, sprintf(mbsEmoji::$htmlThemes, mbsEmoji::$directory.$img, htmlspecialchars(str_replace(array('%','(',')'), array("&#37;","&#40;","&#41;"),$smile))), $text);
-		}
 		return $text;
 	}
 }
